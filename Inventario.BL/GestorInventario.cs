@@ -17,8 +17,8 @@ namespace Inventario.BL
         {
         }
 
-        // Método para agregar un nuevo producto al inventario
-        public void AgregarProducto(MODEL.Producto producto)
+       
+        public void AgregarProducto(MODEL.Producto producto) // Método para agregar un nuevo producto al inventario
         {
             _db.Productos.Add(producto);
             _db.SaveChanges();
@@ -42,8 +42,8 @@ namespace Inventario.BL
             return _db.Productos.Find(idProducto);
         }
 
-        // Metodo para eliminar producto
-        public void EliminarProducto(int idProducto)
+    
+        public void EliminarProducto(int idProducto)    // Metodo para eliminar producto
         {
             var producto = _db.Productos.Find(idProducto);
             if (producto != null)
