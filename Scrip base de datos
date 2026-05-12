@@ -1,0 +1,27 @@
+CREATE DATABASE InventarioDB;
+GO
+USE InventarioDB;
+GO
+
+-- Si ya existe la tabla
+IF OBJECT_ID('Productos', 'U') IS NOT NULL
+    DROP TABLE Productos;
+GO
+
+CREATE TABLE Productos (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Nombre NVARCHAR(100) NOT NULL,
+    Categoria NVARCHAR(100) NOT NULL,
+    Precio FLOAT NOT NULL,   -- corresponde a double en C#
+    Stock INT NOT NULL
+);
+GO
+
+-- Datos de prueba
+INSERT INTO Productos (Nombre, Categoria, Precio, Stock)
+VALUES
+('Laptop Lenovo', 'Tecnología', 850.00, 10),
+('Mouse Logitech', 'Accesorios', 25.50, 50),
+('Monitor Samsung', 'Tecnología', 180.00, 20),
+('Silla Oficina', 'Muebles', 120.00, 15);
+GO
